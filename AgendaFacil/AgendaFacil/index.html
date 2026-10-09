@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgendaFácil — Agendamento</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topo">
+      <div class="marca"><span class="marca-icone">A</span><div><h1>AgendaFácil</h1><p>Seu próximo compromisso, sem complicação.</p></div></div>
+      <div class="etapa-topo" id="etapaTopo">ETAPA 1 DE 4</div>
+    </header>
+
+    <div class="progresso" aria-label="Progresso do agendamento"><span id="barraProgresso"></span></div>
+
+    <section class="painel" id="tela1">
+      <div class="cabecalho-tela"><span class="passo">01</span><div><p class="sobretitulo">VAMOS COMEÇAR</p><h2>Qual serviço você precisa?</h2><p class="descricao">Escolha uma opção para continuar.</p></div></div>
+      <div class="opcoes-servico" id="opcoesServico">
+        <button type="button" class="opcao-servico" data-servico="Corte de cabelo"><span class="servico-emoji">✂</span><span><strong>Corte de cabelo</strong><small>Renove seu visual</small></span><span class="radio"></span></button>
+        <button type="button" class="opcao-servico" data-servico="Manutenção"><span class="servico-emoji">🛠</span><span><strong>Manutenção</strong><small>Cuidados e ajustes</small></span><span class="radio"></span></button>
+        <button type="button" class="opcao-servico" data-servico="Consultoria"><span class="servico-emoji">💬</span><span><strong>Consultoria</strong><small>Orientação personalizada</small></span><span class="radio"></span></button>
+      </div>
+      <p class="erro" id="erroServico" role="alert"></p>
+      <div class="acoes"><span class="texto-apoio">Você poderá revisar tudo antes de confirmar.</span><button class="btn primario" id="irData">Continuar <span>→</span></button></div>
+    </section>
+
+    <section class="painel oculto" id="tela2">
+      <div class="cabecalho-tela"><span class="passo">02</span><div><p class="sobretitulo">ESCOLHA SEU HORÁRIO</p><h2>Quando fica melhor para você?</h2><p class="descricao">Selecione uma data e um dos horários disponíveis.</p></div></div>
+      <div class="campo"><label for="data">Data do agendamento</label><input type="date" id="data" required><small>Escolha hoje ou uma data futura.</small></div>
+      <div class="campo"><label>Horários disponíveis</label><div class="horarios" id="horarios"><button type="button" class="horario" data-horario="09:00">09:00</button><button type="button" class="horario" data-horario="10:30">10:30</button><button type="button" class="horario" data-horario="14:00">14:00</button><button type="button" class="horario" data-horario="15:30">15:30</button></div><small id="dicaHorario">Escolha a data para consultar os horários.</small></div>
+      <p class="erro" id="erroData" role="alert"></p>
+      <div class="acoes"><button class="btn secundario" id="voltarServico">← Voltar</button><button class="btn primario" id="irRevisao">Continuar <span>→</span></button></div>
+    </section>
+
+    <section class="painel oculto" id="tela3">
+      <div class="cabecalho-tela"><span class="passo">03</span><div><p class="sobretitulo">QUASE LÁ</p><h2>Revise seu agendamento</h2><p class="descricao">Confira as informações e preencha seu nome.</p></div></div>
+      <div class="resumo">
+        <div class="resumo-linha"><span>Serviço</span><strong id="resumoServico">—</strong></div>
+        <div class="resumo-linha"><span>Data</span><strong id="resumoData">—</strong></div>
+        <div class="resumo-linha"><span>Horário</span><strong id="resumoHorario">—</strong></div>
+      </div>
+      <div class="campo"><label for="nome">Nome completo</label><input type="text" id="nome" placeholder="Digite seu nome" maxlength="100" autocomplete="name"><small>Obrigatório para identificar o agendamento.</small></div>
+      <p class="erro" id="erroNome" role="alert"></p>
+      <div class="acoes"><button class="btn secundario" id="voltarData">← Voltar e editar</button><button class="btn primario" id="confirmar">Confirmar agendamento ✓</button></div>
+    </section>
+
+    <section class="painel oculto" id="tela4" aria-live="polite">
+      <div class="sucesso">
+        <div class="icone-sucesso">✓</div><p class="sobretitulo">TUDO CERTO!</p><h2>Agendamento confirmado!</h2><p class="descricao">Seu horário foi reservado. Guarde os detalhes abaixo.</p>
+      </div>
+      <div class="resumo confirmado">
+        <div class="resumo-linha"><span>Protocolo</span><strong id="protocolo">—</strong></div>
+        <div class="resumo-linha"><span>Nome</span><strong id="finalNome">—</strong></div>
+        <div class="resumo-linha"><span>Serviço</span><strong id="finalServico">—</strong></div>
+        <div class="resumo-linha"><span>Data</span><strong id="finalData">—</strong></div>
+        <div class="resumo-linha"><span>Horário</span><strong id="finalHorario">—</strong></div>
+      </div>
+      <div class="acoes centralizadas"><button class="btn primario" id="novoAgendamento">Fazer novo agendamento</button></div>
+      <p class="nota-final">Demonstração acadêmica: os dados ficam somente nesta página e não são enviados a um servidor.</p>
+    </section>
+    <footer>AgendaFácil <span>•</span> Simples, claro e organizado.</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

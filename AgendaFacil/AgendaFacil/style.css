@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+:root{--azul:#647b9b;--azul-escuro:#405876;--fundo:#f3f6fb;--texto:#202a38;--suave:#6d7888;--borda:#dce3ed;--branco:#fff;--verde:#20865b;--verdeclaro:#eaf7f0}
+*{
+    box-sizing:border-box
+}
+body{
+    margin:0;min-height:100vh;
+    background:radial-gradient(circle at top left,#e4ecf7 0,transparent 38%),var(--fundo);
+    font-family:'DM Sans',Arial,sans-serif;
+    color:var(--texto);
+    padding:32px 16px;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start}
+button,input
+{
+    font:inherit
+}
+button{cursor:pointer}
+.app{width:min(100%,680px);
+    background:var(--branco);
+    border:1px solid #e6ebf2;
+    border-radius:24px;box-shadow:0 22px 70px #293c5712;
+    overflow:hidden
+}
+.topo{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:26px 32px 22px;
+    gap:16px
+}
+.marca{display:flex;
+    align-items:center;
+    gap:12px
+}.marca-icone{
+    width:44px;
+    height:44px;
+    border-radius:14px;
+    background:var(--azul-escuro);
+    color:#fff;
+    display:grid;
+    place-items:center;
+    font:800 24px Manrope,sans-serif
+}
+.marca h1{font:800 20px Manrope,sans-serif;
+    margin:0;
+    letter-spacing:-.5px
+}
+.marca p{font-size:12px;
+    color:var(--suave);
+    margin:4px 0 0
+}
+.etapa-topo{font-size:10px;
+    font-weight:700;
+    letter-spacing:1px;
+    color:var(--azul-escuro);
+    background:#edf2f8;padding:9px 11px;
+    border-radius:30px;
+    white-space:nowrap}
+.progresso{
+    height:4px;
+    background:#edf0f5}
+.progresso span{height:100%;
+    width:25%;
+    display:block;
+    background:var(--azul);
+    transition:width .25s ease}
+.painel{
+    padding:32px;
+    animation:aparecer .22s ease}@keyframes aparecer{from{opacity:.5;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+.oculto{
+    display:none
+}
+.cabecalho-tela{display:flex;gap:16px;align-items:flex-start;margin-bottom:28px}.passo{width:42px;height:42px;flex:0 0 42px;display:grid;place-items:center;background:#edf2f8;color:var(--azul-escuro);font:800 14px Manrope,sans-serif;border-radius:13px}
+.sobretitulo{font-size:10px;letter-spacing:1.7px;font-weight:700;color:var(--azul);margin:0 0 7px}.cabecalho-tela h2,.sucesso h2{font:800 clamp(21px,4vw,27px) Manrope,sans-serif;letter-spacing:-.8px;margin:0}.descricao{font-size:13px;color:var(--suave);line-height:1.6;margin:8px 0 0}
+.opcoes-servico{display:grid;gap:12px}.opcao-servico{display:flex;align-items:center;gap:14px;text-align:left;padding:16px;border:1px solid var(--borda);border-radius:14px;background:#fff;color:var(--texto);transition:.18s}.opcao-servico:hover{border-color:#9aaec7;background:#fafcff}.opcao-servico.selecionado{border:1.5px solid var(--azul);background:#f2f6fb;box-shadow:0 0 0 3px #647b9b12}.servico-emoji{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:#edf2f8;font-size:20px}.opcao-servico strong,.opcao-servico small{display:block}.opcao-servico strong{font-size:14px}.opcao-servico small{font-size:12px;color:var(--suave);margin-top:4px}.radio{width:18px;height:18px;border:1.5px solid #bdc8d7;border-radius:50%;margin-left:auto;flex:0 0 18px}.selecionado .radio{border:5px solid var(--azul)}
+.campo{margin:22px 0}.campo label{display:block;font-weight:700;font-size:13px;margin-bottom:9px}.campo input{width:100%;border:1px solid #cfd8e5;border-radius:11px;padding:13px 14px;color:var(--texto);background:#fff;outline:none}.campo input:focus{border-color:var(--azul);box-shadow:0 0 0 3px #647b9b20}.campo small{display:block;font-size:11px;color:var(--suave);margin-top:7px}
+.horarios{display:flex;flex-wrap:wrap;gap:10px}.horario{min-width:80px;padding:12px 15px;border:1px solid #cfd8e5;background:#fff;color:var(--texto);border-radius:10px;font-weight:600;font-size:13px}.horario:hover:not(:disabled){border-color:var(--azul)}.horario.selecionado{background:var(--azul);border-color:var(--azul);color:#fff}.horario:disabled{opacity:.35;cursor:not-allowed;text-decoration:line-through}
+.resumo{background:#f7f9fc;border:1px solid #e4eaf2;border-radius:14px;padding:7px 16px;margin:20px 0 24px}.resumo-linha{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid #e3e9f1;font-size:13px}.resumo-linha:last-child{border-bottom:0}.resumo-linha span{color:var(--suave)}.resumo-linha strong{text-align:right;overflow-wrap:anywhere}
+.acoes{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:28px}.btn{border:0;border-radius:11px;padding:13px 18px;font-weight:700;font-size:13px;transition:background .15s,transform .15s}.btn:active{transform:scale(.98)}.primario{background:var(--azul-escuro);color:#fff}.primario:hover{background:#304660}.secundario{background:#fff;border:1px solid #cfd8e5;color:#43536a}.secundario:hover{background:#f6f8fb}.texto-apoio{max-width:190px;color:var(--suave);font-size:11px;line-height:1.5}.erro{color:#b42318;font-size:12px;margin:10px 0 0;min-height:0}.erro:not(:empty){background:#fff1f0;border-radius:8px;padding:10px 12px}
+.sucesso{text-align:center;padding:8px 0 4px}.icone-sucesso{width:72px;height:72px;display:grid;place-items:center;margin:0 auto 22px;border:2px solid #b4dec9;border-radius:50%;background:var(--verdeclaro);color:var(--verde);font-size:36px}.sucesso .sobretitulo{color:var(--verde)}.confirmado{margin-top:25px}.centralizadas{justify-content:center}.nota-final{text-align:center;color:var(--suave);font-size:11px;line-height:1.5;margin:22px 0 0}
+footer{border-top:1px solid #edf0f5;padding:17px 32px;text-align:center;color:#8a94a3;font-size:11px}footer span{padding:0 5px;color:var(--azul)}
+@media(max-width:520px){body{padding:12px 8px}.app{border-radius:18px}.topo{padding:20px 19px 17px}.marca p{max-width:180px;line-height:1.4}.etapa-topo{font-size:9px;padding:8px}.painel{padding:24px 19px}.cabecalho-tela{gap:12px}.passo{width:36px;height:36px;flex-basis:36px}.acoes{flex-wrap:wrap}.acoes .btn{flex:1}.texto-apoio{max-width:none;width:100%;order:2}.resumo-linha{font-size:12px}.horario{flex:1;min-width:65px;padding:12px 8px}footer{padding:16px}}
